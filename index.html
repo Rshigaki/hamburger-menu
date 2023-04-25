@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <header role="banner">
+        <div class=header-grid>
+            <div id=content><a href="#">マイページ</a></div>
+            <div id=content><a href="#">プロフィール</a></div>
+            <div id=content><a href="#">設定</a></div>
+            <div id=content><a href="#">サインアウト</a></div>
+            <div id=content-img>
+                <img src="https://www.youtube.com/img/desktop/supported_browsers/yt_logo_rgb_light.png">
+            </div>
+        </div>
+    </header>
+    <div id="hamburger-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" />
+    </div>
+    <nav id="drawer-nav">
+        <ul class="drawer-menu">
+            <li><a class="drawer-brand" href="#">メニュー</a></li>
+            <li><a class="drawer-menu-item" href="#">マイページ</a></li>
+            <li><a class="drawer-menu-item" href="#">プロフィール</a></li>
+            <li><a class="drawer-menu-item" href="#">設定</a></li>
+            <li><a class="drawer-menu-item" href="#">サインアウト</a></li>
+        </ul>
+    </nav>
+    <script type="text/javascript">
+        const memubtn = document.getElementById('hamburger-btn');
+        const wrapper = document.getElementById('drawer-nav');
+        let navopen = false;
+
+        const navToggle = () => {
+            if (navopen) {
+                navClose();
+            } else {
+                navOpen();
+            }
+        }
+
+        const navOpen = () => {
+            navopen = true;
+            wrapper.style.right = 0;
+        }
+
+        const navClose = () => {
+            navopen = false;
+            wrapper.style.right = null;
+            wrapper.style.right = -wrapper.clientWidth;
+        }
+        wrapper.style.right = -wrapper.clientWidth;
+        memubtn.addEventListener('click', navToggle, false);
+    </script>
+</body>
+
+</html>
